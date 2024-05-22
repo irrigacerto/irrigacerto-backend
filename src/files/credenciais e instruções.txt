@@ -1,0 +1,97 @@
+VPS Server Contabo
+https://my.contabo.com
+Login: irrigacaomanejo@gmail.com
+Password: QVPB5DBYxJnaM9eX
+
+Gmail
+Login: irrigacaomanejo@gmail.com
+Password: ManejoIr2023
+
+Cloudflare
+Login: irrigacaomanejo@gmail.com
+Password: QVPB5DBYxJnaM9eX*
+
+Registro BR
+LWARS2
+Senhanova@2024
+
+ManejoIr2023
+
+
+=================
+BANCO DE DADOS PRODUÇÃO
+
+CREATE USER 'user_irrigation_management_prod'@'%' IDENTIFIED BY 'J9CB74HU6EAW';
+GRANT ALL PRIVILEGES ON * . * TO 'user_irrigation_management_prod'@'%';
+FLUSH PRIVILEGES;
+mysql -u user_irrigation_management_prod -p
+CREATE DATABASE db_irrigation_management_prod;
+
+O arquivo para criação do banco de dados (banco.sql) está na pasta files.
+
+
+=================
+SMTP
+
+Server: smtp.mailersend.net
+Port: 587
+Username: MS_dyOnoS@manejodeirrigacao.agr.br
+Password: nALfSSVw0xLbzK8S
+
+
+================
+CREDENCIAIS DO SERVIDOR VPS
+
+root
+207.244.252.247
+63bE2wep7hr6x1
+
+
+==================
+TECNOLOGIAS UTILIZADAS NO BACK-END
+
+Linguagem: JavaScript
+Framework: NestJS
+Banco de dados: MySql
+ORM: TypeORM
+Ambiente de execução: NodeJS
+Gerenciador NodeJS: PM2
+
+
+==================
+Commands
+
+// Acessar a máquina via ssh
+// A máquina pode ser acessada pelo próprio terminal do windows, gitbash, termius, mobaxterm.
+// Rodar o comando e informar a senha: 63bE2wep7hr6x1
+ssh root@207.244.252.247
+
+// Entrar na pasta do projeto
+cd /home/manejo-de-irrigacao-back
+
+// Rodar a aplicação com pm2 após fazer o build
+pm2 start ./dist/main.js --name api
+
+// Listar as aplicações que estão rodando com pm2
+pm2 list
+
+// Restartar a aplicação com base no id listado
+pm2 restart id_da_aplicação_pm2
+
+// Parar a aplicação com base no id listado
+pm2 stop id_da_aplicação_pm2
+
+// Gerar build da aplicação
+npm run build
+
+// Rodar a aplicação no modo de desenvolvimento
+npm run start:dev
+
+// Deletar um prjeto pm2
+pm2 delete id_da_aplicação_pm2
+
+// Verificar os logs do pm2
+pm2 logs
+
+// Verificar os logs de uma aplicação específica
+pm2 logs id_da_aplicação_pm2
